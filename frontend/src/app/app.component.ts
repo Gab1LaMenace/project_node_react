@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [RouterOutlet],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'music-app';
+  constructor(private router: Router) {}
+  // Method to navigate the user to the login page.
+  goToLogin() {
+    this.router.navigate(['/login']); // Navigates to the '/login' route.
+  }
+  // Method to navigate the user to the registration page.
+  goToRegister() {
+    this.router.navigate(['/register']); // Navigates to the '/register' route.
+  }
 }

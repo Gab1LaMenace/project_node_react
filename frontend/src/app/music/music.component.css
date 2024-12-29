@@ -1,0 +1,198 @@
+/* Main Container */
+.music-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Create Playlist Button */
+.create-playlist-btn {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.create-playlist-btn:hover {
+  background-color: #45a049;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Playlist Section */
+.playlists {
+  margin-bottom: 30px;
+}
+
+.playlist {
+  margin-bottom: 15px;
+}
+
+.playlist-tracks li {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.playlist-tracks li:hover {
+  text-decoration: underline;
+}
+
+/* Tracks Grid */
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #121212; /* Dark background for a Spotify-like feel */
+}
+
+.track-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #181818;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.track-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.track-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.track-details {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.track-title {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist,
+.track-album {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  margin: 2px 0;
+}
+
+/* No Tracks Fallback */
+.no-tracks {
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Sticky Footer Music Player */
+.music-player {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centers the player */
+  width: 80%; /* Adjust the width as per your preference */
+  max-width: 700px; /* Maximum width for larger screens */
+  background: #ff6f00; /* Orange background */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.music-player img {
+  width: 40px; /* Adjust image size */
+  height: 40px;
+  border-radius: 5px;
+}
+
+.player-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 1;
+  width: 50%; /* Prevents title from pushing buttons */
+}
+
+.player-details h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap; /* Prevents wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ellipsis for long track names */
+}
+
+.player-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.player-controls button:hover {
+  color: #fff3e0; /* Lighter orange on hover */
+}
+
+.volume-control {
+  width: 80px; /* Adjust volume control width */
+  cursor: pointer;
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 600px) {
+  .music-player {
+    width: 90%; /* Smaller width for smaller screens */
+  }
+
+  .player-details h3,
+  .player-details p {
+    font-size: 0.8rem;
+  }
+
+  .volume-control {
+    width: 60px;
+  }
+}
