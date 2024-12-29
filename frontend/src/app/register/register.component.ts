@@ -1,58 +1,113 @@
-// Import required Angular modules and decorators
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { AccountService } from '../services/account.service';
+import {FormsModule} from '@angular/forms';
+import {NgIf} from '@angular/common'; // Import AccountService
 
 @Component({
-  selector: 'app-register', // Component selector to use in HTML templates
-  templateUrl: './register.component.html', // Path to the HTML template
-  styleUrls: ['./register.component.css'], // Path to the CSS file for styling
-  standalone: true, // Marks the component as standalone (doesn't require a module)
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
   imports: [
-    FormsModule, // Enables template-driven forms
-    NgIf // Provides structural directives for conditional rendering
+    FormsModule,
+    NgIf
   ]
 })
 export class RegisterComponent {
-  // Form fields for registration
   username: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
-
-  // Feedback messages for the user
+  role: string = 'user'; // Default role
   errorMessage: string = '';
   successMessage: string = '';
 
-  // Static accounts list to simulate a shared state
-  // This should ideally be managed by a service or a database
-  static accounts: { username: string; email: string; password: string }[] = [];
+  constructor(private router: Router, private accountService: AccountService) {}
 
-  constructor(private router: Router) {}
-
-  /**
-   * Handles form submission.
-   * @param event - The form submission event
-   */
   onSubmit(event: Event): void {
-    event.preventDefault(); // Prevents default form submission behavior
+    event.preventDefault();
 
-    // Validation: Check if an account with the same username or email exists
-    const existingAccount = RegisterComponent.accounts.find(
-      (account) => account.username === this.username || account.email === this.email
+    // Check if all fields are filled
+    if (!this.username || !this.email || !this.password || !this.confirmPassword) {
+      this.errorMessage = 'All fields are required!';
+      return;
+    }
+
+    // Check if password and confirm password match
+    if (this.password !== this.confirmPassword) {
+      this.errorMessage = 'Passwords do not match!';
+      return;
+    }
+
+    // Check if the username or email already exists
+    const existingAccount = this.accountService.getAccounts().find(
+      (acc) => acc.username === this.username || acc.email === this.email
     );
     if (existingAccount) {
-      // Display an error message if the username or email is already taken
       this.errorMessage = 'Username or email already exists!';
       return;
     }
 
-    // Save the new account to the accounts list
-    RegisterComponent.accounts.push({ username: this.username, email: this.email, password: this.password });
+    const newAccount = {
+      username: this.username,
+      email: this.email,
+      password: this.password,
+      role: this.role,
+    };
 
-    // Provide success feedback to the user
-    this.successMessage = 'Registration successful!';
-    this.errorMessage = '';
+    const result = this.accountService.registerAccount(newAccount);
+    if (result === 'Account registered successfully!') {
+      this.successMessage = result;
+    } else {
+      this.errorMessage = result;
+    }
   }
 }
+
+//here is our try to link with our sql database
+/*
+export class RegisterComponent {
+  name: string = '';
+  surname: string = '';
+  username: string = '';
+  email: string = '';
+  password: string = '';
+  errorMessage: string = '';
+  successMessage: string = '';
+
+  constructor(private http: HttpClient, private router: Router) {}
+
+  onSubmit(event: Event): void {
+    event.preventDefault();  // Prevent page reload on form submission
+
+    const userData = {
+      name: this.name,
+      surname: this.surname,
+      username: this.username,
+      email: this.email,
+      password: this.password,
+    };
+
+    this.http.post('http://localhost:3000/api/register', userData).subscribe({
+      next: (response: any) => {
+        if (response.success) {
+          this.successMessage = 'Registration successful! Redirecting to login page...';
+          setTimeout(() => {
+            this.router.navigate(['/login']);  // Redirect to login after successful registration
+          }, 2000);  // Delay to show success message before redirect
+        } else {
+          this.errorMessage = response.message || 'Something went wrong. Please try again.';
+        }
+      },
+      error: (err) => {
+        console.error('Registration error:', err);
+        this.errorMessage = 'An error occurred. Please try again.';
+      },
+    });
+  }
+
+  goToLogin(): void {
+    this.router.navigate(['/login']);
+  }
+}
+*/

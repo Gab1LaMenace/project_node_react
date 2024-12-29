@@ -1,1 +1,20 @@
-<p>admin works!</p>
+<div class="admin-container">
+  <h2>Admin Dashboard</h2>
+  <h3>Registered Users</h3>
+  <table class="accounts-table">
+    <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let account of accounts">
+      <td>{{ account.username }}</td>
+      <td>{{ account.email }}</td>
+      <td>{{ account.password }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -33,7 +33,7 @@
     {{ errorMessage }}
   </div>
 
-  <!-- Tracks List (First Block) -->
+  <!-- Tracks List (Filtered) -->
   <div *ngIf="filteredTracks.length > 0; else noTracks" class="tracks-grid">
     <div
       *ngFor="let track of filteredTracks; let i = index"
@@ -66,27 +66,6 @@
   <ng-template #noTracks>
     <p class="no-tracks">Tracks are loading. Please wait.</p>
   </ng-template>
-
-  <!-- Tracks List (Second Block) -->
-  <div *ngIf="tracks.length > 0; else noTracks" class="tracks-grid">
-    <div
-      *ngFor="let track of tracks; let i = index"
-      class="track-card"
-      (click)="playTrack(track, i)"
-    >
-      <img
-        [src]="track.image"
-        alt="{{ track.name }}"
-        class="track-image"
-        loading="lazy"
-      />
-      <div class="track-details">
-        <h3 class="track-title">{{ track.name }}</h3>
-        <p class="track-artist">{{ track.artist_name }}</p>
-        <p class="track-album">{{ track.album_name }}</p>
-      </div>
-    </div>
-  </div>
 
   <!-- Sticky Music Player -->
   <div class="music-player" *ngIf="currentTrack">

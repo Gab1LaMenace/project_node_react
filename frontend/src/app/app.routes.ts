@@ -26,3 +26,4 @@ export const routes: Routes = [
   // Define the route for the music page, linking it to the MusicComponent.
   { path: 'music', component: MusicComponent },
 ];
+

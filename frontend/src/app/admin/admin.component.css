@@ -1,0 +1,13 @@
+/* admin.component.css */
+.admin-container {
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ag-theme-alpine {
+  margin-top: 20px;
+}

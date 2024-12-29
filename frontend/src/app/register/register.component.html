@@ -31,8 +31,29 @@
         required
       />
     </div>
+    <div class="input-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        required
+      />
+    </div>
+
+    <!-- Role Selection -->
+    <div class="input-group">
+      <label for="role">Role</label>
+      <select [(ngModel)]="role" name="role" id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
     <button type="submit">Register</button>
   </form>
+
   <div *ngIf="errorMessage" class="error-message">
     <p>{{ errorMessage }}</p>
   </div>
