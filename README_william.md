@@ -1,1 +1,1 @@
-I mainly worked on the frontend. I mainly did the music player page and worked on the rest of the files in the frontend.
+I mainly worked on the frontend. Most of my work was on  the music player page and i also worked on the rest of the files in the frontend with Gabin.
