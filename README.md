@@ -10,7 +10,11 @@ We tried to link all the users to the database using POSTGRE SQL but didn't succ
 The connection to the database was successful as we could create users directly and find them in the pgAdmin software, but we did not manage to search for them on the database as it kept returning an empty table on the server while the table had multiple user values in the database. We also tried to do the swagger api but were unsuccessful.
 In the backend we tried jwt tokens, database integration, swagger api, websocket handling, but since we did not succeed in running it correctly we abandoned the backend and we tried to implement most of the stuff to the frontend.
 
-To run our project you just need to execute 'ng serve' in the frontend. You can also run the backend using 'npm run dev' but the backend is not working correctly.
+To run our project you just need to execute 'ng serve' in the frontend. You can also run the backend using 'npm run dev' but the backend is not working correctly. Sometimes you might encounter a problem with angular on a line similar to this
+import * as angular from "angular";
+The fix is to enter this command in the temrinal : npm install --save-dev @types/angular
+Songs take some time to load, wait around 10 seconds.
+
 
 The work was split as follows: Gabin and William worked on the frontend while Carl and Romain worked on the backend.
 Github accounts :   Gabin Lefrancois -> https://github.com/Gab1LaMenace
@@ -19,3 +23,13 @@ Github accounts :   Gabin Lefrancois -> https://github.com/Gab1LaMenace
                     William Kau -> https://github.com/WilliamKau12
 
 We originally worked using another github repo but something happened and we uploaded the final version to this one.
+
+Here are some pictures of the running project.
+## Login page
+![alt text](image.png)
+## Register page
+![alt text](image-1.png)
+## Admin page
+![alt text](image-2.png)
+## Songs page (with a playlist created)
+![alt text](image-3.png)

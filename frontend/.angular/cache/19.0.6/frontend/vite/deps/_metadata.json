@@ -1,68 +1,65 @@
 {
-  "hash": "7fd927d5",
-  "configHash": "1565faf6",
-  "lockfileHash": "794857c2",
-  "browserHash": "88fb0be4",
+  "hash": "ce918914",
+  "configHash": "04351646",
+  "lockfileHash": "9d345454",
+  "browserHash": "3a0db4ab",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "f7a6b72b",
+      "fileHash": "503bb220",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "35f8961f",
+      "fileHash": "00e83d4a",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "82a75de2",
+      "fileHash": "52c659e0",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "f0da7885",
+      "fileHash": "ba44eac4",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "f0f1ac3a",
+      "fileHash": "0da87aa2",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "bd4831b2",
+      "fileHash": "c9a2433c",
       "needsInterop": false
     },
     "ag-grid-angular": {
       "src": "../../../../../../node_modules/ag-grid-angular/fesm2022/ag-grid-angular.mjs",
       "file": "ag-grid-angular.js",
-      "fileHash": "ac937213",
+      "fileHash": "2c39e56b",
       "needsInterop": false
     },
     "ag-grid-community": {
       "src": "../../../../../../node_modules/ag-grid-community/dist/package/main.esm.mjs",
       "file": "ag-grid-community.js",
-      "fileHash": "50c368ad",
+      "fileHash": "97baa857",
       "needsInterop": false
     },
     "highcharts": {
       "src": "../../../../../../node_modules/highcharts/highcharts.js",
       "file": "highcharts.js",
-      "fileHash": "a08725ed",
+      "fileHash": "33f4c920",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-PCA5OHMY": {
-      "file": "chunk-PCA5OHMY.js"
-    },
     "chunk-E4JZ5DCQ": {
       "file": "chunk-E4JZ5DCQ.js"
     },
@@ -74,6 +71,9 @@
     },
     "chunk-5VGBLMCN": {
       "file": "chunk-5VGBLMCN.js"
+    },
+    "chunk-PCA5OHMY": {
+      "file": "chunk-PCA5OHMY.js"
     },
     "chunk-3OV72XIM": {
       "file": "chunk-3OV72XIM.js"

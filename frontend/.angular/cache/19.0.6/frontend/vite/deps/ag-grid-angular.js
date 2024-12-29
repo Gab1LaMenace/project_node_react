@@ -1,13 +1,4 @@
 import {
-  BaseComponentWrapper,
-  VanillaFrameworkOverrides,
-  _BOOLEAN_MIXED_GRID_OPTIONS,
-  _combineAttributesAndGridOptions,
-  _processOnChange,
-  _removeFromParent,
-  createGrid
-} from "./chunk-PCA5OHMY.js";
-import {
   Component,
   ElementRef,
   EventEmitter,
@@ -31,6 +22,15 @@ import {
   ɵɵgetInheritedFactory,
   ɵɵinject
 } from "./chunk-5VGBLMCN.js";
+import {
+  BaseComponentWrapper,
+  VanillaFrameworkOverrides,
+  _BOOLEAN_MIXED_GRID_OPTIONS,
+  _combineAttributesAndGridOptions,
+  _processOnChange,
+  _removeFromParent,
+  createGrid
+} from "./chunk-PCA5OHMY.js";
 import "./chunk-3OV72XIM.js";
 
 // node_modules/ag-grid-angular/fesm2022/ag-grid-angular.mjs
