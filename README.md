@@ -26,10 +26,10 @@ We originally worked using another github repo but something happened and we upl
 
 Here are some pictures of the running project.
 ## Login page
-![alt text](image.png)
+![alt text](./Images/image.png)
 ## Register page
-![alt text](image-1.png)
+![alt text](./Images/image-1.png)
 ## Admin page
-![alt text](image-2.png)
+![alt text](./Images/image-2.png)
 ## Songs page (with a playlist created)
-![alt text](image-3.png)
+![alt text](./Images/image-3.png)
