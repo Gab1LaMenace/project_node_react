@@ -1,20 +1,28 @@
 <div class="admin-container">
   <h2>Admin Dashboard</h2>
-  <h3>Registered Users</h3>
-  <table class="accounts-table">
-    <thead>
-    <tr>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Password</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let account of accounts">
-      <td>{{ account.username }}</td>
-      <td>{{ account.email }}</td>
-      <td>{{ account.password }}</td>
-    </tr>
-    </tbody>
-  </table>
+
+  <!-- AG Grid Table to Display All Accounts -->
+  <div style="width: 100%; height: 400px;">
+    <ag-grid-angular
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      class="ag-theme-alpine"
+      style="width: 100%; height: 100%;"
+    ></ag-grid-angular>
+  </div>
+
+  <!-- Highcharts Chart -->
+  <div style="width: 100%; height: 400px;">
+    <div id="container" style="width: 100%; height: 100%;"></div>
+  </div>
+
+  <!-- Display Account Statistics -->
+  <div class="accounts-info">
+    <h3>Account Statistics</h3>
+    <p>Total Accounts: {{ totalAccounts }}</p>
+
+    <!-- Calculate and display users and admins percentages -->
+    <p>Users: {{ users.length }} ({{ ((users.length / totalAccounts) * 100).toFixed(2) }}%)</p>
+    <p>Admins: {{ admins.length }} ({{ ((admins.length / totalAccounts) * 100).toFixed(2) }}%)</p>
+  </div>
 </div>
