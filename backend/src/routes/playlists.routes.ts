@@ -18,7 +18,7 @@ router.get('/:userId', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { userId, name, description } = req.body; // Fetch userId, name, and description from the request body
-    const playlist = await playlistService.createPlaylist(userId, { name, description }); // Pass userId explicitly
+    const playlist = await playlistService.createPlaylist(userId, { name, description }); 
     res.status(201).json(playlist);
   } catch (error) {
     console.error('Error creating playlist:', error);

@@ -22,7 +22,7 @@ angular.module('musicApp').controller('TracksController', [
     $scope.isPlaying = false;
     $scope.audio = new Audio();
 
-    // Load tracks from backend
+    // Load tracks 
     $scope.loadTracks = function () {
       $http.get('/api/tracks')
         .then(response => {

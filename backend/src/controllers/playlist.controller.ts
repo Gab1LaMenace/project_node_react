@@ -27,7 +27,7 @@ export class PlaylistController extends Controller {
       throw new Error('Playlist name is required.');
     }
   
-    // Delegate the creation logic to the service
+ 
     const playlist = await this.createPlaylist(data);
   
     // Return the created playlist

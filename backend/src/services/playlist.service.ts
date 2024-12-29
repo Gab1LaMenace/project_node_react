@@ -128,7 +128,7 @@ export class PlaylistService {
 
   private getCurrentUserId(): string {
     // This would normally come from the JWT token in the request
-    // For now, we'll return a placeholder
+    // For now, we return a placeholder
     return 'current-user-id';
   }
 }

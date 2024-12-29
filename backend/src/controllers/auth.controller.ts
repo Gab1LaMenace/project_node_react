@@ -4,7 +4,7 @@ import { createUser, findUserByEmail } from '../models/user.model';
 
 const router = express.Router();
 
-// Secret key for JWT (store securely in an environment variable in production)
+// Secret key for JWT 
 const JWT_SECRET = 'c1a2r3l4k5l6i7n8k9';
 
 // User registration
@@ -20,7 +20,7 @@ router.post('/register', async (req: Request, res: Response): Promise<void> => {
     }
 
     // Create the new user
-    const newUser = await createUser({ username, email, password }); // Store the plain password as provided
+    const newUser = await createUser({ username, email, password }); 
     res.status(201).json({ message: 'User registered successfully', user: { id: newUser.id, username, email } });
   } catch (error) {
     console.error('Error during registration:', error);
@@ -35,7 +35,7 @@ router.post('/login', async (req: Request, res: Response): Promise<void> => {
 
     // Find the user by email
     const user = await findUserByEmail(email);
-    if (!user || user.password_hash !== password) { // Plain text password comparison
+    if (!user || user.password_hash !== password) { 
       res.status(400).json({ error: 'Invalid email or password' });
       return;
     }

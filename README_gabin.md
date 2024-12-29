@@ -1,0 +1,1 @@
+I mainly worked on the frontend. I mainly did the ag-grid, highcharts and the look of the frontend and worked on the rest of the files in the frontend.

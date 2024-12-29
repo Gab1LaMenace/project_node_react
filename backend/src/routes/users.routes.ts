@@ -10,7 +10,7 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, email, password} = req.body;
     const user = await createUser({ username, email, password});
-    res.status(201).json(user); // Send a response, don't return it
+    res.status(201).json(user);
   } catch (error) {
     console.error('Error creating user:', error);
     res.status(500).json({ error: 'Error creating user' });
@@ -19,7 +19,7 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
 
 // Get user by email (protected)
 router.get('/:email', (req: Request, res: Response) => {
-  const user = res.locals.user; // Access user from res.locals
+  const user = res.locals.user; 
   console.log('Authenticated user:', user);
   
   res.send({ 

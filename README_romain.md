@@ -1,0 +1,1 @@
+I mainly worked on the backend. I mainly did the database integration and worked on the rest of the files in the backend.

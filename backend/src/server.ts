@@ -1,5 +1,3 @@
-// In server.ts
-
 import express, { Request, Response, NextFunction } from 'express';
 import * as dotenv from 'dotenv';
 import { errorHandler } from './Middleware/errorHandler.middleware';
